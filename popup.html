@@ -2,21 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>CareerTrack</title>
     <style>
-        table, th, td {
-            border: 1px solid black;
+        body {
+            font-family: sans-serif;
+            padding: 12px;
+            min-width: 500px;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        label {
+            font-size: 13px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 6px 10px;
+            font-size: 13px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
         }
     </style>
-    
 </head>
 <body>
-    <button type = "button" id="ScanButton">📩 Scan Gmail</button>
-    <script src="popup.js"></script>
 
-   <table id="applicationsTable">
+    <div class="controls">
+        <label>From: <input type="date" id="startDate" /></label>
+        <label>To: <input type="date" id="endDate" /></label>
+        <button type="button" id="ScanButton">📩 Scan Gmail</button>
+    </div>
+
+    <p id="statusText" style="font-size:13px; color: gray;"></p>
+
+    <table id="applicationsTable">
         <tr>
             <th>Company</th>
             <th>Subject</th>
@@ -24,6 +51,7 @@
             <th>From</th>
         </tr>
     </table>
+
     <script src="popup.js"></script>
 </body>
 </html>
